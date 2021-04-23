@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Train API</title>
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <script src="/js/jquery-3.6.0.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <form action="http://localhost:3000/trains" method="POST">
+      <label for="station">Station:</label><br>
+      <select name="station">
+        <% for(var i = 0; i<stationNames.length; i++){ %>
+          <option value="<%= stationNames[i].StationDesc%>"><%= stationNames[i].StationDesc%></option>
+        <% } %>
+      </select><br>
+      <label for="minutes">Minutes:</label><br>
+      <input type="number" id="minutes" name="minutes"><br><br>
+      <input type="submit">
+    </form>
+</body>
+</html>

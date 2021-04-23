@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Train Table</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <script src="/js/jquery-3.6.0.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <form action="http://localhost:3000" method="GET"><input type="submit" value="Search"></form>
+
+    <% if(trainData == null) { %>
+        <h1>No information currently available for your selection.</h1>
+    <% } else { %>
+        <table class="table">
+            <tr>
+                <th>Expected Departure Time</th>
+                <th>Expected Arrival</th>
+                <th>Origin</th> 
+                <th>Destination</th>
+                <th>Destination Time</th> 
+            </tr> 
+        <% for(var i = 0; i<trainData.length; i++){ %>
+            <tr>
+                <td><%= trainData[i].Expdepart%></td>
+                <td><%= trainData[i].Exparrival%></td>
+                <td><%= trainData[i].Origin%></td>
+                <td><%= trainData[i].Destination%></td>
+                <td><%= trainData[i].Destinationtime%></td> 
+            </tr>
+        <% } %>
+        <table>
+    <% } %>
+</body>
+</html>
